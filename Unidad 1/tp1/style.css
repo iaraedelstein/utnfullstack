@@ -1,0 +1,28 @@
+body {
+    background-color: aquamarine;
+}
+
+.cuadrado {
+    height: 300px;
+    width: 300px;
+}
+
+#color1 {
+    background-color: #ff0000;
+}
+
+#color2 {
+    background-color: #ff0033;
+}
+
+#color3 {
+    background-color: #ff0066;
+}
+
+#color4 {
+    background-color: #ff0099;
+}
+
+#color5 {
+    background-color: #ff00cc;
+}
