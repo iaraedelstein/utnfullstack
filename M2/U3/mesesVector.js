@@ -24,6 +24,9 @@ for (let i = 0; i < meses.length; i++) {
   }
 }
 
+console.log("Meses con 30 días: ", mes30);
+console.log("Meses con 31 días: ", mes31);
+
 let i = 0;
 const tableContent = document.querySelector("#tableContent");
 
