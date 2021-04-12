@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadProducts()">
+  <div class="content">
+    <header class="header-cart">
+      <h1 class="header-cart__title">Shopping Cart</h1>
+      <div class="header-cart__detail">
+        <button id="shoppingCartButton" type="button" class="btn btn-info btn-lg" data-toggle="modal"
+          data-target="#checkoutModal">
+          <img src="./images/shopping_cart_white_24dp.svg">
+        </button>
+        <p id="product-cart">0</p>
+      </div>
+    </header>
+    <main class="product-container">
+      <h1 class="category-title">Products</h1>
+      <ul class="products">
+      </ul>
+
+    </main>
+    <footer class="footer-content">
+      <h3>Subscribe to our newsletter</h3>
+      <p>Join our monthly newsletter and never miss out on new stories and promotions</p>
+    </footer>
+  </div>
+  <!-- Modal -->
+  <div id="checkoutModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Shopping Cart</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div id="checkoutModalBody" class="modal-body">
+          <div class="modal-body__cart">
+            <ul>
+              <li class="modal-body__product">
+                <span>Nombre</span>
+                <span>$ 100</span>
+              </li>
+            </ul>
+            <div class="modal-body__total">
+              <span>Total</span>
+              <span>$ 100</span>
+            </div>
+          </div>
+          <p id="modalNoProducts">
+            No se encontraron productos en el carrito.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="">Comprar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

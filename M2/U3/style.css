@@ -1,0 +1,38 @@
+.meses-container {
+  margin: 10px 10%;
+}
+
+.table-months {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  color: rgb(166, 157, 245);
+}
+
+.table-months tr {
+  text-align: left;
+  width: 100%;
+}
+
+#tableContent tr:nth-child(odd) {
+  color: #bdbdbd;
+  background-color: #ffffff;
+}
+
+#tableContent tr:nth-child(even) {
+  background-color: #bdbdbd;
+  color: #ffffff;
+}
+
+.th-containter tr {
+  color: #ffffff;
+  background-color: grey;
+}
+
+.table-months th,
+.table-months td {
+  padding: 12px 15px;
+  width: 50%;
+}
