@@ -1,4 +1,4 @@
-var productos = [
+const productos = [
   {
     nombre: "harina",
     precio: 35,
@@ -81,11 +81,15 @@ var productos = [
   },
 ];
 
-var cart = [];
-const productCart = document.getElementById("product-cart");
+let cart = [];
+const productCart = document.querySelector("#product-cart");
 const buyButton = document.querySelector("#buyButton");
+const modalBody = document.querySelector("#checkoutModalBody");
 
-function loadProducts() {
+/**
+ * Load product on page with products data given
+ */
+const loadProducts = () => {
   let prodList = document.createElement("ul");
   prodList.className = "products";
   document.getElementsByClassName("product-container")[0].appendChild(prodList);
@@ -103,13 +107,7 @@ function loadProducts() {
     productImage.className = "product__image";
     addToCart = document.createElement("button");
     addToCart.className = "btn-add-cart btn btn-primary";
-    addToCart.onclick = function (e) {
-      const nombre = e.target.parentElement.childNodes[1].textContent;
-      const { precio } = productos.find((p) => p.nombre === nombre);
-      cart.push({ nombre: nombre, precio: precio });
-      productCart.textContent = parseInt(productCart.textContent) + 1;
-      this.disabled = true;
-    };
+    addToCart.onclick = onClickProduct;
     addToCartContent = document.createTextNode("Add to Cart");
     addToCart.appendChild(addToCartContent);
     product.className = "product";
@@ -119,11 +117,14 @@ function loadProducts() {
     product.appendChild(addToCart);
     prodList.appendChild(product);
   }
-}
+};
 
-function loadModal() {
-  const modalBody = document.querySelector("#checkoutModalBody");
+/**
+ * Load modal cart info with total price
+ */
+const loadModal = () => {
   modalBody.innerHTML = "";
+
   if (cart.length <= 0) {
     buyButton.disabled = true;
     const noProd = document.createElement("p");
@@ -166,21 +167,35 @@ function loadModal() {
     priceTotal.appendChild(spanPrecioTotal);
     modalBody.appendChild(priceTotal);
   }
-}
+};
 
-function emptyCartAndReload() {
+const onClickProduct = (e) => {
+  const nombre = e.target.parentElement.childNodes[1].textContent;
+  const { precio } = productos.find((p) => p.nombre === nombre);
+  cart.push({ nombre: nombre, precio: precio });
+  productCart.textContent = parseInt(productCart.textContent) + 1;
+  e.target.disabled = true;
+};
+
+/**
+ * EmptyButton
+ */
+const emptyCartAndReload = () => {
   restart();
   loadModal();
-}
+};
 
-function endCheckout() {
+/**
+ * BuyButton
+ */
+const endCheckout = () => {
   restart();
-}
+};
 
-function restart() {
+const restart = () => {
   cart = [];
   productCart.textContent = 0;
   document
     .querySelectorAll(".btn-add-cart")
     .forEach((e) => (e.disabled = false));
-}
+};
