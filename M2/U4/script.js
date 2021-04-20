@@ -155,6 +155,7 @@ const loadModal = () => {
       modalBodyList.appendChild(li);
       total += product.precio;
     });
+
     const priceTotal = document.createElement("div");
     priceTotal.className = "modal-body__total";
     const spanPrecioTotal = document.createElement("span");
