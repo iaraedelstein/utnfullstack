@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo en clase</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Niveles de importancia de los estilos 1.etiqueta 2.style.css 3.navegador -->
+</head>
+
+<body>
+    <h1>Pagina de formulario</h1>
+    <form method="POST" action="/api/form">
+        <div class="form-input">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" placeholder="Nombre de usuario">
+        </div>
+        <div class="form-input">
+            <label for="lastname">Apellido</label>
+            <input type="text" id="lastname">
+        </div>
+        <div class="form-input">
+            <label for="age">Edad</label>
+            <input type="text" id="edad">
+        </div>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="holanda@gmail.com">
+        </div>
+        <div class="form-input">
+            <input type="submit" value="Enviar Formulario">
+        </div>
+    </form>
+</body>
+
+</html>
